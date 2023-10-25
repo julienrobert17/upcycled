@@ -4,7 +4,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faHeartEmpty } from '@fortawesome/free-regular-svg-icons';
 import './index.css';
 
-const Post = ({ postInfo }) => {
+const Post = ({ postInfo, action}) => {
   const [votes, setVotes] = useState(postInfo.votes);
   const [hasVoted, setHasVoted] = useState(undefined); 
 

@@ -9,7 +9,7 @@ const settings = {
   dots: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 3,
+  slidesToShow: 4,
   slidesToScroll: 2,
   autoplay: true,
   autoplaySpeed: 4500,
@@ -20,7 +20,8 @@ const Home = () => {
   const [designs, setDesigns] = useState([]);
   const [sortedDesigns, setSortedDesigns] = useState([]);
   const [userName, setUserName] = useState("");
-  
+  const [showImageModal, setShowImageModal] = useState(false);
+  const [selectImg, setselectImg] = useState(false);
 
   const initialDesigns = [
     { id: 1, title: 'Design de William', votes: 1250, img:'https://i.etsystatic.com/15318220/r/il/9f8f1c/3579247112/il_1588xN.3579247112_bx7e.jpg'},
@@ -44,6 +45,17 @@ const Home = () => {
     const name = nameFromParams || defaultUserName;
     setUserName(name);
   }, []);
+
+
+  const handleImageClick = (img) => {
+    setselectImg(img)
+    console.log(selectImg)
+    setShowImageModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowImageModal(false);
+  };
 
   return (
       <div className='home'>
@@ -82,8 +94,8 @@ const Home = () => {
         <p className='title'>Les designs les plus populaires :</p>
         <Slider {...settings}>
           {sortedDesigns?.map((design) => (
-            <div key={design.id}>
-              <Post postInfo={design} />
+            <div key={design.id} >
+              <Post postInfo={design} action={() => handleImageClick(design.img)}/>
             </div>
           ))}
         </Slider>
@@ -93,47 +105,16 @@ const Home = () => {
             <Post key={design.id} postInfo={design} />
           ))}
         </div>
-
-        <div>
-          <div style={{width: '300px'}} class="VLdlV">
-            <ul>
-              <li class="dMNCl">
-                <h2 class="DyIbk">1</h2>
-                
-                <h4 class="azhe1">THE BEST DESIGNS</h4>
-                <p class="bCi-8">Vote for multiple designs in one place.</p>
-                <p class="bCi-8">Find the best way to make your old clothes hyper stylish and get the opinion of the whole community.</p>
-              </li>
-
-              <li class="dMNCl">
-                <h2 class="DyIbk">2</h2>
-                <h4 class="azhe1">THE HOTTEST PRODUCTS</h4>
-                <p class="bCi-8">See what’s new and what’s trending.</p>
-                <p class="bCi-8">Hit the heart to receive alerts on the latest drops from your favourite designers.</p>
-              </li>
-
-              <li class="dMNCl">
-                <h2 class="DyIbk">3</h2>
-                <h4 class="azhe1">THE FAIREST PRICES</h4>
-                <p class="bCi-8">Buy quality products, Made In France, at the right price throughout the production chain. </p>
-                <p class="bCi-8">UPC members are notified when an item goes on sale.</p>
-              </li>
-            </ul>
+        {showImageModal && (
+          <div className="image-modal" onClick={handleCloseModal}>
+            <div className="modal-content">
+              <img
+                src={selectImg}
+                className="modal-image"
+              />
+            </div>
           </div>
-          
-          <div style={{width: '300px'}} class="FHEnn">
-            <a href="/account/register/">
-              <div class="_5yJ8t">
-                <p class="TEZra">Sign Up For Smarter Shopping</p>
-                <span class="KE3Ku">Join
-                  
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-       
-
+       )}
       </div>   
   );
 };
