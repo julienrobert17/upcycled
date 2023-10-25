@@ -74,7 +74,7 @@ const Profile = () => {
                 </li>
               ))}
             </ul>
-        </div>
+          </div>
         </div>
         <div className="voted-posts">
           <h3>Posts Votés</h3>
