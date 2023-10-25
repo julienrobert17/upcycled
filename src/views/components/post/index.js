@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import './index.css';
 
-const Post = ({ postInfo }) => {
+const Post = ({ postInfo, action}) => {
   const [votes, setVotes] = useState(postInfo.votes);
-  const [hasVoted, setHasVoted] = useState(false); 
+  const [hasVoted, setHasVoted] = useState(false);
 
   const handleVote = () => {
     if (!hasVoted) {
@@ -20,7 +20,12 @@ const Post = ({ postInfo }) => {
   return (
     <div className="card">
       <p className="cardTitle">{postInfo.title}</p>
-      <img className="img" src={postInfo.img} alt={postInfo.title} />
+      <img
+        className="img"
+        src={postInfo.img}
+        alt={postInfo.title}
+        onClick={action}
+      />
       <div className="downLine">
         <div>
           <p className="votes">Votes: {votes}</p>
@@ -30,7 +35,7 @@ const Post = ({ postInfo }) => {
             className={hasVoted ? "btnv" : "btn"}
             onClick={handleVote}
           >
-            <FontAwesomeIcon  icon={hasVoted ? faChevronDown : faChevronUp} />
+            <FontAwesomeIcon icon={hasVoted ? faChevronDown : faChevronUp} />
           </button>
         </div>
       </div>

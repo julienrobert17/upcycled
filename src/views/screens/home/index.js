@@ -9,7 +9,7 @@ const settings = {
   dots: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 3,
+  slidesToShow: 4,
   slidesToScroll: 2,
   autoplay: true,
   autoplaySpeed: 4500,
@@ -20,7 +20,8 @@ const Home = () => {
   const [designs, setDesigns] = useState([]);
   const [sortedDesigns, setSortedDesigns] = useState([]);
   const [userName, setUserName] = useState("");
-  
+  const [showImageModal, setShowImageModal] = useState(false);
+  const [selectImg, setselectImg] = useState(false);
 
   const initialDesigns = [
     { id: 1, title: 'Design 1', votes: 1250, img:'https://i.etsystatic.com/15318220/r/il/9f8f1c/3579247112/il_1588xN.3579247112_bx7e.jpg'},
@@ -45,14 +46,25 @@ const Home = () => {
     setUserName(name);
   }, []);
 
+
+  const handleImageClick = (img) => {
+    setselectImg(img)
+    console.log(selectImg)
+    setShowImageModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowImageModal(false);
+  };
+
   return (
       <div className='home'>
         <Header userName={userName}/>
         <p className='title'>Les designs les plus populaires :</p>
         <Slider {...settings}>
           {sortedDesigns?.map((design) => (
-            <div key={design.id}>
-              <Post postInfo={design} />
+            <div key={design.id} >
+              <Post postInfo={design} action={() => handleImageClick(design.img)}/>
             </div>
           ))}
         </Slider>
@@ -62,6 +74,16 @@ const Home = () => {
             <Post key={design.id} postInfo={design} />
           ))}
         </div>
+        {showImageModal && (
+          <div className="image-modal" onClick={handleCloseModal}>
+            <div className="modal-content">
+              <img
+                src={selectImg}
+                className="modal-image"
+              />
+            </div>
+          </div>
+       )}
       </div>   
   );
 };
