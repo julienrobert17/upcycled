@@ -20,7 +20,7 @@ const Post = ({ postInfo }) => {
 
   return (
     <div className="card">
-      <p className="cardTitle">{postInfo.title}</p>
+      {/* <p className="cardTitle">{postInfo.title}</p> */}
       <img className="img" src={postInfo.img} alt={postInfo.title} />
       <div className="downLine">
         <div>

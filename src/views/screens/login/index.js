@@ -61,6 +61,7 @@ const Login = () => {
                   value={loginData.email}
                   onChange={handleInputChange}
                   required
+                  style={{width: '250px'}}
                 />
               </div>
               <div className='fieldsHolder'>
@@ -72,6 +73,7 @@ const Login = () => {
                   value={loginData.password}
                   onChange={handleInputChange}
                   required
+                  style={{width: '250px'}}
                 />
               </div>
               {error && <p className="error">{error}</p>}
