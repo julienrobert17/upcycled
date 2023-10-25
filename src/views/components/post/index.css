@@ -41,10 +41,10 @@
   }
   
   .btn {
-    background-color: #000000;
-    color: #fff;
+    background-color: #fff;
+    color: #aaa;
     border: none;
-    border-radius: 50%;
+    border-radius: 19px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -54,10 +54,21 @@
     transition: background-color 0.3s ease-in-out;
   }
   .btnv {
-    background-color: #000000;
-    color: #fff;
+    background-color: #fff;
+    color: #F00020;
     border: none;
-    border-radius: 50%;
+    border-radius: 19px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btnempty {
+    background-color: #fff;
+    color: #aaa;
+    border: none;
+    border-radius: 19px;
     width: 30px;
     height: 30px;
     display: flex;
@@ -66,7 +77,10 @@
   }
   
   .btn:hover {
-    background-color: #575757;
+    background-color: #fff;
+  }
+  .btnv:hover {
+    background-color: #fff;
   }
  
 @media (max-width: 768px) {

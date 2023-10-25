@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as faHeartEmpty } from '@fortawesome/free-regular-svg-icons';
 import './index.css';
 
 const Post = ({ postInfo }) => {
   const [votes, setVotes] = useState(postInfo.votes);
-  const [hasVoted, setHasVoted] = useState(false); 
+  const [hasVoted, setHasVoted] = useState(undefined); 
 
   const handleVote = () => {
     if (!hasVoted) {
@@ -30,7 +31,7 @@ const Post = ({ postInfo }) => {
             className={hasVoted ? "btnv" : "btn"}
             onClick={handleVote}
           >
-            <FontAwesomeIcon  icon={hasVoted ? faChevronDown : faChevronUp} />
+            <FontAwesomeIcon className={hasVoted ? "fa-regular" : "fa-solid"} icon={hasVoted ? faHeart : faHeartEmpty} />
           </button>
         </div>
       </div>
