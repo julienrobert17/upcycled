@@ -23,13 +23,13 @@ const Home = () => {
   
 
   const initialDesigns = [
-    { id: 1, title: 'Design 1', votes: 1250, img:'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=2610&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
+    { id: 1, title: 'Design 1', votes: 1250, img:'https://i.etsystatic.com/15318220/r/il/9f8f1c/3579247112/il_1588xN.3579247112_bx7e.jpg'},
     { id: 2, title: 'Design 1', votes: 1440, img:'https://plus.unsplash.com/premium_photo-1682090778813-3938ba76ee57?auto=format&fit=crop&q=80&w=2576&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
     { id: 3, title: 'Design 1', votes: 1520, img:'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=2610&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
     { id: 4, title: 'Design 1', votes: 1370, img:'https://plus.unsplash.com/premium_photo-1682090778813-3938ba76ee57?auto=format&fit=crop&q=80&w=2576&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
-    { id: 5, title: 'Design 1', votes: 1550, img:'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=2610&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
+    { id: 5, title: 'Design 1', votes: 1550, img:'https://i.etsystatic.com/15318220/r/il/9f8f1c/3579247112/il_1588xN.3579247112_bx7e.jpg'},
     { id: 6, title: 'Design 1', votes: 870, img:'https://plus.unsplash.com/premium_photo-1682090778813-3938ba76ee57?auto=format&fit=crop&q=80&w=2576&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
-    { id: 7, title: 'Design 1', votes: 658, img:'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=2610&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
+    { id: 7, title: 'Design 1', votes: 658, img:'https://i.etsystatic.com/15318220/r/il/9f8f1c/3579247112/il_1588xN.3579247112_bx7e.jpg'},
     { id: 8, title: 'Design 1', votes: 423, img:'https://plus.unsplash.com/premium_photo-1682090778813-3938ba76ee57?auto=format&fit=crop&q=80&w=2576&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
     { id: 9, title: 'Design 1', votes: 208, img:'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=2610&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
     { id: 10, title: 'Design 1', votes: 180, img:'https://plus.unsplash.com/premium_photo-1682090778813-3938ba76ee57?auto=format&fit=crop&q=80&w=2576&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
@@ -48,7 +48,6 @@ const Home = () => {
   return (
       <div className='home'>
         <Header userName={userName}/>
-        <p className='title'>{userName}</p>
         <p className='title'>Les designs les plus populaires :</p>
         <Slider {...settings}>
           {sortedDesigns?.map((design) => (

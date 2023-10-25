@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import './index.css';
 
 const Post = ({ postInfo }) => {
   const [votes, setVotes] = useState(postInfo.votes);
-  const [hasVoted, setHasVoted] = useState(false); // Ajout d'un état pour suivre si l'utilisateur a déjà voté pour ce post
+  const [hasVoted, setHasVoted] = useState(false); 
 
   const handleVote = () => {
     if (!hasVoted) {
       setVotes(votes + 1);
-      setHasVoted(true); // Marquer le post comme voté
+      setHasVoted(true);
+    } else {
+      setVotes(votes - 1);
+      setHasVoted(false);
     }
   };
 
@@ -26,9 +29,8 @@ const Post = ({ postInfo }) => {
           <button
             className={hasVoted ? "btnv" : "btn"}
             onClick={handleVote}
-            disabled={hasVoted} // Désactive le bouton si l'utilisateur a déjà voté
           >
-            <FontAwesomeIcon  icon={hasVoted ? faCheck : faChevronUp} />
+            <FontAwesomeIcon  icon={hasVoted ? faChevronDown : faChevronUp} />
           </button>
         </div>
       </div>
