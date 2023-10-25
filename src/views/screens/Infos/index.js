@@ -6,7 +6,7 @@ import { Header, Post } from '../../components';
 import './index.css' 
 
 
-const Dons = () => {
+const Infos = () => {
 
 
   return (
@@ -53,4 +53,4 @@ const Dons = () => {
   );
 };
 
-export default Dons;
+export default Infos;
