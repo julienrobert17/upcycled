@@ -12,4 +12,4 @@ const Design = () => {
   );
 };
 
-export default Home;
+export default Design;
