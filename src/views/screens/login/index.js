@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from '../../components';
+import { Header, Footer } from '../../components';
 import { useAuth } from '../../../AuthContext';
 import './index.css';
 
@@ -83,6 +83,7 @@ const Login = () => {
           </div>
         )}
       </div>
+      <div className='bottom'><Footer /></div>
     </div>
   );
 };
