@@ -31,7 +31,8 @@ const Login = () => {
       loginData.password === hardcodedCredentials.password
     ) {
       login('Hugo');
-      window.location.href = '/home?userName=Hugo';
+      
+      setInterval(() => window.location.href = '/home', 500); 
     } else {
       setError('Adresse e-mail ou mot de passe incorrect.');
     }
