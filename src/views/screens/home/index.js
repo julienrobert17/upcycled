@@ -4,6 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Header, Post } from '../../components';
 import './index.css' 
+import { useAuth } from '../../../AuthContext';
 
 const settings = {
   dots: false,
@@ -16,10 +17,12 @@ const settings = {
 };
 
 const Home = () => {
+
+  const { isLoggedIn, login, userName } = useAuth();
+
   const searchParams = new URLSearchParams(window.location.search);
   const [designs, setDesigns] = useState([]);
   const [sortedDesigns, setSortedDesigns] = useState([]);
-  const [userName, setUserName] = useState("");
   const [showImageModal, setShowImageModal] = useState(false);
   const [selectImg, setselectImg] = useState(false);
 
@@ -40,10 +43,7 @@ const Home = () => {
     setDesigns(initialDesigns);
     const sortedDesigns = [...initialDesigns].sort((a, b) => b.votes - a.votes);
     setSortedDesigns(sortedDesigns);
-    const nameFromParams = searchParams.get('userName');
-    const defaultUserName = '';
-    const name = nameFromParams || defaultUserName;
-    setUserName(name);
+
   }, []);
 
 
@@ -75,7 +75,7 @@ const Home = () => {
                   <div class="u-ui-padding-x2-large">
                     <h1 class="seller-promotion__content-title">Prêts à faire du tri dans vos placards ?</h1>
                     <div class="web_ui__Spacer__x2-large web_ui__Spacer__horizontal"></div>
-                    <a style={{backgroundColor: '#488467'}} role="button" href="/dons" class="web_ui__Button__button web_ui__Button__filled web_ui__Button__default web_ui__Button__primary web_ui__Button__truncated">
+                    <a style={{backgroundColor: '#488467'}} role="button" href="/faire-un-don" class="web_ui__Button__button web_ui__Button__filled web_ui__Button__default web_ui__Button__primary web_ui__Button__truncated">
                       <span class="web_ui__Button__content">
                         <span class="web_ui__Button__label">Donnez maintenant</span>
                       </span></a>

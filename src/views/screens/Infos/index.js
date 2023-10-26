@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import Slider from 'react-slick';
+import React from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Header, Post } from '../../components';
+import { Header } from '../../components';
 import './index.css' 
+import { useAuth } from '../../../AuthContext';
 
 
 const Infos = () => {
 
+  const { isLoggedIn, login, userName } = useAuth();
 
   return (
     <div>
-      <Header />
+      <Header userName={userName}/>
       <div className="pageTitle">
         <div className="pageTitleText">
           <p className="title">Commencez à donner. C'est très simple.</p>
