@@ -3,3 +3,35 @@
     flex-direction: column;
     background-color: #eee;
 }
+
+.formStyle {
+    max-width: 400px;
+}
+
+  .fieldsHolder {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .label {
+    margin-right: auto;
+  }
+  .dons-container {
+    max-width: 400px;
+    height: 100%;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .title {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0px 40px; 
+  }
+  .pageTitleText {
+    margin: 40px
+  }

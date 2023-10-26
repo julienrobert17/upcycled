@@ -52,7 +52,7 @@ const Profile = () => {
 
   return (
     <div>
-      <Header />
+      <Header showDeconnect={true} />
       <div className="profile-container">
         <div className='left-wrapper'>
           <div className="profile-info">

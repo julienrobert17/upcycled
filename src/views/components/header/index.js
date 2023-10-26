@@ -1,7 +1,15 @@
 import React from 'react';
 import './index.css';
+import { useAuth } from '../../../AuthContext';
 
-const Header = ({ userName }) => {
+const Header = ({ userName, showDeconnect }) => {
+
+  const { logout } = useAuth();
+
+  function logoutUser() {
+    logout();
+    window.location.href = '/home';
+  }
 
   return (
     <header className="header">
@@ -11,11 +19,19 @@ const Header = ({ userName }) => {
           <li className="nav-item"><a href="/">Accueil</a></li>
           <li className="nav-item"><a href="/creer-mon-design">Créer mon design</a></li>
           <li className="nav-item"><a href="/faire-un-don">Faites un dons</a></li>
-          {userName ? (
+          {
+          userName ? 
+            (
               <li className="nav-item custom-li"><a href="/profile">{userName}</a></li>
-            ) : (
-              <li className="nav-item"><a href="/Login">Connexion</a></li>
-            )}
+            ) : 
+            showDeconnect ? 
+              (
+                <li onClick={logoutUser} className="nav-item custom-li"><a>Déconnexion</a></li>
+              ) : 
+              (
+                <li className="nav-item"><a href="/Login">Connexion</a></li>
+              )
+          }
         </ul>
       </nav>
     </header>

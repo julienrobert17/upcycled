@@ -18,7 +18,7 @@ const settings = {
 
 const Home = () => {
 
-  const { isLoggedIn, login, userName } = useAuth();
+  const { userName } = useAuth();
 
   const searchParams = new URLSearchParams(window.location.search);
   const [designs, setDesigns] = useState([]);
