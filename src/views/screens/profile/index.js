@@ -62,13 +62,13 @@ const Profile = () => {
           </div>
           <div className="donation-history">
             <h3>Historique des Dons</h3>
-            <ul>
+            <ul className='unitList'>
               {donationHistory.map((donation) => (
                 <li key={donation.id}>
                   {donation.date}:
-                  <ul>
+                  <ul className='unitList'>
                     {donation.itemName.map((item, index) => (
-                      <li className="vetement" key={index}> - {item}</li>
+                      <li className="vetement" key={index}>{item}</li>
                     ))}
                   </ul>
                 </li>
