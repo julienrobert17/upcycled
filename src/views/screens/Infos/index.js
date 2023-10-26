@@ -8,14 +8,14 @@ import { useAuth } from '../../../AuthContext';
 
 const Infos = () => {
 
-  const { isLoggedIn, login, userName } = useAuth();
+  const { userName } = useAuth();
 
   return (
     <div>
       <Header userName={userName}/>
       <div className="pageTitle">
         <div className="pageTitleText">
-          <p className="title">Commencez à donner. C'est très simple.</p>
+          <p className="title">Commencez à donner, c'est très simple.</p>
           <p className="subTitle">Donnez une seconde vie à votre garde-robe. Donnez vos vieux vetements pour acheter ce que vous voulez.</p>
           <a href=""><button>Donner maintenant</button></a>
         </div>
