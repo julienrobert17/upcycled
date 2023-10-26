@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Header, Footer } from '../../components';
@@ -7,11 +6,11 @@ import { useAuth } from '../../../AuthContext';
 import './index.css' 
 
 const Design = () => {
-  const { userName, login } = useAuth();
+  const { userName } = useAuth();
 
   const [articles, setArticles] = useState({
     articleNumber: '',
-    plan: null, // Utilisez null pour stocker le fichier
+    plan: null,
   });
 
   const handleSubmit = async (e) => {
@@ -21,8 +20,6 @@ const Design = () => {
     formData.append('articleNumber', articles.articleNumber);
     formData.append('plan', articles.plan);
 
-    // Vous pouvez maintenant envoyer formData à votre backend pour traiter le téléchargement du fichier
-
     alert("Merci pour votre don !!")
   };
 
@@ -30,18 +27,13 @@ const Design = () => {
     const { name, value, files } = e.target;
 
     if (name === 'plan') {
-      // Si l'input est le champ de fichier, enregistrez le fichier lui-même
       setArticles({ ...articles, [name]: files[0] });
     } else {
-      // Sinon, enregistrez la valeur normalement
       setArticles({ ...articles, [name]: value });
     }
   };
 
   useEffect(() => {
-    const nameFromParams = userName;
-    const defaultUserName = '';
-    const name = nameFromParams || defaultUserName;
   }, []);
 
   return (

@@ -91,7 +91,7 @@ const Home = () => {
         </div>
 
         <Header userName={userName}/>
-        <p className='title'>Les designs les plus populaires :</p>
+        <p className='title home'>Les designs les plus populaires :</p>
         <Slider {...settings}>
           {sortedDesigns?.map((design) => (
             <div key={design.id} >
@@ -99,7 +99,7 @@ const Home = () => {
             </div>
           ))}
         </Slider>
-        <p className='title'>Les designs les plus recents :</p>
+        <p className='title home'>Les designs les plus recents :</p>
         <div className='postRecent'>
           {designs?.map((design) => (
             <Post key={design.id} postInfo={design} action={() => handleImageClick(design.img)}/>

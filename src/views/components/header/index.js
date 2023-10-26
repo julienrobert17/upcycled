@@ -26,7 +26,7 @@ const Header = ({ userName, showDeconnect }) => {
             ) : 
             showDeconnect ? 
               (
-                <li onClick={logoutUser} className="nav-item custom-li"><a>Déconnexion</a></li>
+                <li onClick={logoutUser} className="nav-item custom-li"><a href="/Home">Déconnexion</a></li>
               ) : 
               (
                 <li className="nav-item"><a href="/Login">Connexion</a></li>

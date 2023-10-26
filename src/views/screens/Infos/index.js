@@ -22,7 +22,7 @@ const Infos = () => {
       </div>
       <div className="pageInfos">
         <div >
-          <img className="infosImg" src='https://eu-images.contentstack.com/v3/assets/blt82432b0782155fc9/bltc2995e4d3e45623c/6527f344cace7a5510845a6d/SELLER_2_0013.jpg?quality=70&fit=bounds&format=webp&dpr=1&disable=upscale&width=1246&height=910'></img>
+          <img className="infosImg" alt='imgInfos1' src='https://eu-images.contentstack.com/v3/assets/blt82432b0782155fc9/bltc2995e4d3e45623c/6527f344cace7a5510845a6d/SELLER_2_0013.jpg?quality=70&fit=bounds&format=webp&dpr=1&disable=upscale&width=1246&height=910'></img>
         </div>
         <div className="infos">
           <p className="titleInfos">Comment ça marche ?</p>
@@ -47,7 +47,7 @@ const Infos = () => {
           <a href="/design" className="text"><button>Commencez à designer</button></a>
         </div>
         <div>
-          <img className="infosImg" src='https://eu-images.contentstack.com/v3/assets/blt82432b0782155fc9/blt54f722c6c5e9cfef/6527f35fd6faa5598dfddd8b/SELLER_4_0051.jpg?quality=70&fit=bounds&format=webp&dpr=1&disable=upscale&width=1246&height=910'></img>
+          <img className="infosImg" alt='imgInfos2' src='https://eu-images.contentstack.com/v3/assets/blt82432b0782155fc9/blt54f722c6c5e9cfef/6527f35fd6faa5598dfddd8b/SELLER_4_0051.jpg?quality=70&fit=bounds&format=webp&dpr=1&disable=upscale&width=1246&height=910'></img>
         </div>
       </div>
       <Footer />
