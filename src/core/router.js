@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
-import { Home, Login, Profile, Infos, Dons} from '../views/screens'
+import { Home, Login, Profile, Infos} from '../views/screens'
 
 export const Router = () => (
   <BrowserRouter>
@@ -10,6 +10,7 @@ export const Router = () => (
       <Route exact path={'/login'} element={<Login />} />
       <Route exact path={'/profile'} element={<Profile />} />
       <Route exact path={'/instruction'} element={<Infos />} />
+      <Route exact path={'/design'} element={<Infos />} />
       <Route exact path={'/faire-un-don'} element={<Dons />} />
     </Routes>
   </BrowserRouter>
