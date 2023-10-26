@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Header, Post } from '../../components';
+import { Header, Post, Footer } from '../../components';
 import './index.css' 
 
 const settings = {
@@ -102,7 +102,7 @@ const Home = () => {
         <p className='title'>Les designs les plus recents :</p>
         <div className='postRecent'>
           {designs?.map((design) => (
-            <Post key={design.id} postInfo={design} />
+            <Post key={design.id} postInfo={design} action={() => handleImageClick(design.img)}/>
           ))}
         </div>
 
@@ -156,6 +156,7 @@ const Home = () => {
             </div>
           </div>
        )}
+       <Footer />
       </div>   
   );
 };

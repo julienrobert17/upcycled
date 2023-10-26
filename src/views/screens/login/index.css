@@ -58,4 +58,10 @@
   button:hover {
     background-color: #2d2d2d;
   }
+
+  .bottom{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
   

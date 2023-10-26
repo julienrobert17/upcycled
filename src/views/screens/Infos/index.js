@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Slider from 'react-slick';
+import React from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Header, Post } from '../../components';
+import { Header, Footer } from '../../components';
 import './index.css' 
 
 
@@ -49,6 +48,7 @@ const Infos = () => {
           <img className="infosImg" src='https://eu-images.contentstack.com/v3/assets/blt82432b0782155fc9/blt54f722c6c5e9cfef/6527f35fd6faa5598dfddd8b/SELLER_4_0051.jpg?quality=70&fit=bounds&format=webp&dpr=1&disable=upscale&width=1246&height=910'></img>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
